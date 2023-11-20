@@ -1,0 +1,60 @@
+@use './default' as default;
+
+.layers, .particle-animation {
+    @include default.d-flex;
+    @include default.d-position;
+}
+
+.layers {
+    @include default.d-size;
+}
+
+.middle-frame-zoom {
+    @include default.d-position;
+}
+
+.logo {
+    width: 250px;
+    height: 250px;
+    z-index:2;
+    background: radial-gradient(#CCC48B, transparent 70%); ;
+}
+
+.small-frame {
+    width: 250px;
+    height: 250px;
+    padding:50px;
+    border-radius: 30px;
+    opacity: 0.3;
+    filter:blur(0.1rem);
+    background-color: #151f2e8e;
+    border: 10px solid #de6e49;
+}
+
+.middle-frame {
+    width: 350px;
+    height: 350px;
+    padding:50px;
+    border-radius: 30px;
+    opacity: 0.8;
+    z-index:3;
+    border: 12px solid #de6e49;
+}
+
+.layers {
+    
+    z-index:10;
+}
+
+@media screen and (max-width: 900px){
+
+	.small-frame, .logo {
+		width:150px;
+        height:150px;
+	}
+    .middle-frame {
+		width : 250px;
+        height:250px;
+        border: 8px solid #de6e49;
+	}
+}

@@ -1,0 +1,179 @@
+@use './css/default';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: linear-gradient(#000000, #151f2e);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+	margin:0;
+	background: transparent;
+}
+
+/* Loader
+***************************************************************/
+
+.loader-container {
+	background-color: black;
+	position: fixed;
+	animation: animateBG 10s linear infinite;
+	z-index: 10000;
+}
+
+@keyframes animateBG {
+	0% {
+		filter:hue-rotate(0deg);
+	}
+	
+	100% {
+		filter:hue-rotate(360deg);
+	}
+}
+
+.loader {
+	position: relative;
+	width: 80px;
+	height: 80px;
+
+}
+
+.loader span {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	transform: rotate(calc(18deg * var(--i)));
+}
+
+.loader span::before {
+	content:'';
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height:10px;
+	background-color: #4f4872;
+	box-shadow: 
+	0 0 10px #4f4872,
+	0 0 30px #704A80,
+	0 0 50px #9b85a5;
+	animation: animate 2s linear infinite;
+	animation-delay: calc(0.05s * var(--i));
+	opacity: 0;
+	border-radius: 50%;
+}
+
+@keyframes animate {
+	0% {
+		opacity: 1;
+		transform:scale(1);
+	}
+	
+	80%,100% {
+		
+		transform:scale(0);
+	}
+}
+
+/*****************
+
+General CSS
+
+******************/
+
+.validate, .error-page {
+	@include default.d-flex($direction:column);
+	@include default.d-size;
+	color: default.$color;
+}
+
+.priority {
+	z-index : 9999 !important;
+}
+
+/***************************************
+
+Mobile
+
+********************************/
+
+.mobile-version {
+	background : default.$d-bg;
+}
+
+.mobile-version, .mobile-section {
+	max-width: 900px;
+	min-width: 267px;
+}
+
+.mobile-section, .middle-frame-zoom {
+	@include default.d-flex;
+}
+
+.mobile-bg {
+	position:fixed;
+	left:0;
+	top:0;
+}
+
+.cog-ctn-mobile {
+	@include default.d-flex($direction:column);
+	position:relative;
+}
+
+.cog-ctn-mobile > div {
+	margin-top: 80px;
+	left:3vw;
+}
+
+
+/**************************************
+
+Some responsive
+
+*****************************************/
+
+@media screen  and (min-width: 900px){
+	.mobile-version {
+		display:none;
+	}
+	body {
+		overflow: hidden;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.desktop-version {
+		display:none;
+	}
+	.popup-ctn {
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	:root {
+		font-size: 2rem;
+	}
+	
+}
+
+@media screen and (min-width: 3840px) {
+	:root {
+		font-size: 3rem;
+	}
+	
+}

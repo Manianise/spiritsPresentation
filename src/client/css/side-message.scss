@@ -1,0 +1,48 @@
+@use './default' as default;
+
+@mixin position-message($side) {
+
+    top: -10px;
+    position:absolute;
+
+    @if $side != 'left' and $side != 'right' {
+        @error "Property #{$side} must be either left or right.";
+      }
+
+    @if $side == 'left' {
+
+        left: 0vw;
+
+    }
+    @if $side == 'right' {
+
+        left: -16vw;
+        text-align: right;
+
+    }
+}
+
+.appear-left {
+    @include position-message(left)
+}
+
+.appear-right {
+    @include position-message(right)
+}
+
+.side-message-ctn {
+
+    @include default.d-flex;
+    z-index:9;
+
+}
+
+.side-message {
+
+    font-family: default.$font-family;
+    color: default.$color;
+    @include default.dmp(0 0.5rem);
+    @include default.d-position;
+    width:15vw;
+    
+}

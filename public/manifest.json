@@ -1,0 +1,55 @@
+{
+  "short_name": "Presentation React App",
+  "name": "Presenting Port-Folio",
+  "icons": [
+    {
+      "src": "logo- 32x32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo- 48x48.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo- 16x16.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logox192.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logox180.webp",
+      "type": "image/webp",
+      "sizes": "180x180"
+    },
+    {
+      "src": "logox512.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#514973",
+  "background_color": "#151f2e",
+  "description": "Slider for presentation",
+  "screenshots": [
+    {
+      "src": "screenshot_wide.webp",
+      "type": "image/webp",
+      "sizes": "720x540",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot_narrow.webp",
+      "type": "image/webp",
+      "sizes": "380x540",
+      "form_factor": "narrow"
+    }
+  ]
+}

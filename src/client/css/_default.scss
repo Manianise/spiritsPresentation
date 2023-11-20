@@ -1,0 +1,55 @@
+$font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !default;
+$font-size : 1.2rem !default;
+$color : #ffffff !default;
+$color-element : #b55d41;
+$d-bg : linear-gradient(#000000, #151f2e);
+
+
+@mixin d-flex($a-items:center, $j-content:center, $direction:row) {
+
+    display: flex;
+    align-items: $a-items !important;
+    justify-content: $j-content !important;
+    flex-direction: $direction;
+
+}
+
+
+@mixin d-size {
+
+    width: 100vw;
+	height: 100vh;
+	background: transparent;
+
+}
+
+
+@mixin d-display {
+
+    display:none;
+
+}
+
+@mixin d-position {
+
+    position:absolute;
+}
+
+@mixin d-opacity {
+
+    opacity:0;
+	transition: opacity 1s linear;
+
+}
+
+@mixin dmp($margin:0,$padding:0) {
+
+    margin : $margin;
+    padding: $padding;
+
+}
+
+@mixin d-inherit {
+    width:inherit;
+    height:inherit;
+}

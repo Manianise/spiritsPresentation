@@ -1,0 +1,56 @@
+@use './default' as default;
+@use './animations' as animate;
+
+.cogwheel {
+    @include default.d-position;
+}
+
+.cog-skills-ctn {
+
+    position: relative;
+    display:grid;
+    grid-template : 
+    "c2 c2 c2 . ." 50px
+    "c2 c2 c2 c1 c1"
+    "c2 c2 c2 c1 c1"
+    ". . . c3 c3"
+    ". . . c3 c3";
+    z-index:8;
+}
+
+.wrapper {
+    position:relative;
+    @include default.d-flex;
+}
+
+#cog-1 {
+    grid-area : c1;
+}
+
+#cog-2 {
+    grid-area : c2;
+    left:32px;
+}
+
+#cog-3 {
+    grid-area : c3;
+    top:-30px;
+}
+
+.cls-2{
+
+    fill:none;
+    stroke-miterlimit:10;
+    stroke-width:10px;
+}
+
+.spin-left {
+    @include animate.rotate('left');
+}
+
+.spin-right {
+    @include animate.rotate('right');
+}
+
+
+

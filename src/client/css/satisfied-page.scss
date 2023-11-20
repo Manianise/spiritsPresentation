@@ -1,0 +1,10 @@
+@use './default' as default;
+
+.size-inherit {
+	@include default.d-inherit;
+}
+
+.satisfied-links :hover {
+    transition: 1s all ease;
+    opacity:0.1;
+}

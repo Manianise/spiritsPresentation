@@ -1,0 +1,26 @@
+@use './default' as default;
+
+.popup-ctn, .static-ctn-style, .static-div-style, .popup-span {
+    @include default.d-flex;
+}
+
+.static-ctn-style {
+
+    position:relative;
+    border-radius: 10px;
+    z-index: 5;
+
+}
+
+.static-div-style {
+
+    position:relative;
+    background-color: #151f2e8e;
+    font-family : default.$font-family;
+    color: default.$color;
+    text-align: center;
+}
+
+.popup-span {
+    @include default.d-inherit;
+}

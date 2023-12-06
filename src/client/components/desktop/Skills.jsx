@@ -5,6 +5,7 @@ import intro from '../../assets/video/intro.mp4'
 import site_web_video_2 from '../../assets/video/site_web_video_2.mp4'
 import site_web_video from '../../assets/video/site_web_video.mp4'
 import { Fade } from "react-awesome-reveal"
+import { VideoSpinner } from "../loader/VideoSpinner"
 
 /**
  * 
@@ -47,38 +48,19 @@ export default function Skills() {
                                 size={screen.availWidth / 4.5}
                                 id='cog-1'
                                 orientation='right'>
-                                <video 
-                                    width={screen.availWidth / 4.5 + 30} 
-                                    autoPlay
-                                    muted
-                                    loop>
-                                        <source src={intro} type="video/mp4"></source>
-                                </video>
-
+                                <VideoSpinner path={intro} />
                             </CogWheel>
                             <CogWheel 
                                 size={screen.availWidth / 4.5} 
                                 id='cog-2'
                                 orientation='left'>
-                                <video 
-                                    width={screen.availWidth / 4.5 + 30} 
-                                    autoPlay
-                                    muted
-                                    loop>
-                                        <source src={site_web_video_2} type="video/mp4"></source>
-                                </video>
+                                    <VideoSpinner path={site_web_video_2} />
                             </CogWheel>
                             <CogWheel 
                                 size={screen.availWidth / 4.5} 
                                 id='cog-3'
                                 orientation='left'>
-                                <video 
-                                    width={screen.availWidth / 4.5 + 30} 
-                                    autoPlay
-                                    muted
-                                    loop>
-                                        <source src={site_web_video} type="video/mp4"></source>
-                                </video>
+                                    <VideoSpinner path={site_web_video} />
                             </CogWheel>
 
                         </div>
@@ -87,6 +69,7 @@ export default function Skills() {
                 </div>
 
                 <CanvasParticleBg nbr={35} />
+
                 
     </>
     

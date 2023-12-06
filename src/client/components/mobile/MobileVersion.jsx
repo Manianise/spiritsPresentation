@@ -46,6 +46,7 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
 
 <>
 <CanvasParticlesBg className='mobile-bg' nbr={30} yStart={size} xStart={screen.availHeight} />
+
 <section style={{height:`${size}px`, width:screen.availWidth}} className='mobile-version'>
 
         

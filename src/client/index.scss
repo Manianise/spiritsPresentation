@@ -1,19 +1,19 @@
 @use './css/default';
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, Roboto, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, Roboto, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(#000000, #151f2e);
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background: default.$d-bg;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
 }
 
 
@@ -22,11 +22,29 @@ body {
 	background: transparent;
 }
 
-/* Loader
+/*
+	Modals
 ***************************************************************/
 
+.modal-ai {
+	position:fixed;
+    left:90vw;
+    top:1vh;
+	z-index:100
+}
+
+/* Loaders
+***************************************************************/
+
+.video-spinner {
+	@include default.d-flex;
+	@include default.img-fit;
+}
+
 .loader-container {
-	background-color: black;
+	@include default.d-flex;
+	@include default.d-size;
+	background : default.$d-bg;
 	position: fixed;
 	animation: animateBG 10s linear infinite;
 	z-index: 10000;
@@ -44,8 +62,8 @@ body {
 
 .loader {
 	position: relative;
-	width: 80px;
-	height: 80px;
+	width: 30px;
+	height: 30px;
 
 }
 
@@ -63,8 +81,8 @@ body {
 	position:absolute;
 	top: 0;
 	left: 0;
-	width: 10px;
-	height:10px;
+	width: 5px;
+	height:5px;
 	background-color: #4f4872;
 	box-shadow: 
 	0 0 10px #4f4872,
@@ -137,6 +155,74 @@ Mobile
 .cog-ctn-mobile > div {
 	margin-top: 80px;
 	left:3vw;
+}
+
+/**************************************
+
+Intro page
+
+*****************************************/
+
+.layers, .particle-animation {
+    @include default.d-flex;
+    @include default.d-position;
+}
+
+.layers {
+    @include default.d-size;
+}
+
+.middle-frame-zoom {
+    @include default.d-position;
+}
+
+.logo {
+    width: 250px;
+    height: 250px;
+    z-index:2;
+    background: radial-gradient(#CCC48B, transparent 70%); ;
+}
+
+.small-frame {
+    width: 250px;
+    height: 250px;
+    padding:50px;
+    border-radius: 30px;
+    opacity: 0.3;
+    filter:blur(0.1rem);
+    background-color: #151f2e8e;
+    border: 10px solid #de6e49;
+}
+
+.middle-frame {
+    width: 350px;
+    height: 350px;
+    padding:50px;
+    border-radius: 30px;
+    opacity: 0.8;
+    z-index:3;
+    border: 12px solid #de6e49;
+}
+
+.layers {
+    
+    z-index:10;
+}
+
+
+/**************************************
+
+Satisfied page
+
+*****************************************/
+
+.size-inherit {
+	@include default.d-inherit;
+}
+
+.satisfied-links :hover {
+    transition: 1s all ease;
+    opacity:0.1;
 }
 
 

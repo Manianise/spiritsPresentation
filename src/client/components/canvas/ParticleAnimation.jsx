@@ -30,7 +30,7 @@ export default function ParticleAnimation({nbr = 1}) {
     // output graphics
     useEffect(() => {
 
-        const canvas = canvasRef.current
+        const canvas = canvasRef?.current
         const ctx = canvas.getContext('2d')
 
         ctx.clearRect(0, 0,cSizeX, cSizeY)

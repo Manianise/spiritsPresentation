@@ -19,7 +19,7 @@ export default function Satisfied() {
                 w={20}
                 h={35}
                 start={true}
-                content='Ils ont des milliers de visiteurs par semaine ! Venez découvrir ceux qui bénéficient déjà de nos services !' />
+                content='Ils ont des milliers de visiteurs déjà ! Venez découvrir ceux qui bénéficient de nos services !' />
                     <div style={{display:'contents'}}>
                         <PopUp
                             y={1}

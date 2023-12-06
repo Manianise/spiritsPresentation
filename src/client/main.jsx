@@ -1,23 +1,32 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './error_page.jsx';
 import './index.scss'
-import './css/first-page.scss'
 import './css/popup-screen.scss'
 import './css/slider.scss'
 import './css/side-message.scss'
 import './css/cogwheels.scss'
-import './css/satisfied-page.scss'
+import Loader from './components/loader/Loader.jsx';
+import { lazy } from 'react';
+
+function LazyApp() {
+
+  const LazyApp = lazy(() => import('./App.jsx'))
+  return <Suspense fallback={<Loader />}>
+    <LazyApp />
+  </Suspense>
+
+}
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <LazyApp />,
     errorElement: <ErrorPage />,
   },
 ]);

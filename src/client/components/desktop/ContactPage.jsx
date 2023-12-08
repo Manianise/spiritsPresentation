@@ -31,7 +31,7 @@ export default function ContactPage() {
                         id='cf'
                         name="contactForm"
                         target="_blank"
-                        action="validate"
+                        action="https://www.se-get.zebrart.fr"
                         method='post'
                         ref={formRef}
                         autoComplete="on">

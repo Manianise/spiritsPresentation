@@ -3,8 +3,8 @@
   "name": "Presenting Port-Folio",
   "icons": [
     {
-      "src":"/favico.ico",
-      "sizes":"16x16",
+      "src":"/favicon.ico",
+      "sizes":"48x48",
       "type":"x-image/ico"
     },
     {

@@ -16,16 +16,16 @@ export default function Skills() {
     return <> 
             <PopUp 
                 x={3} 
-                y={3} 
+                y={10} 
                 w={25}
                 h={10}
                 content='Nos compétences'
                 start={true} />
 
             <PopUp 
-                x={27} 
-                y={51} 
-                w={23}
+                x={15} 
+                y={53} 
+                w={35}
                 h={40}
                 zIndex={8}
                 content={

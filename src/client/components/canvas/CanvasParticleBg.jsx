@@ -3,6 +3,7 @@ import Canvas from './Canvas'
 import Particle from '../../class/Particle'
 import {getRandomColor, getRandomNumber} from '../../utils/Utils'
 import {Fade} from 'react-awesome-reveal'
+import { createPortal } from 'react-dom'
 
 /**
  * 
@@ -39,6 +40,6 @@ useEffect(() => {
 
 
   return <Fade triggerOnce={true}>
-      <Canvas onRef={canvasRef} w={xStart} h={yStart} className={props.className} />
+        <Canvas onRef={canvasRef} w={xStart} h={yStart} className={props.className} />
     </Fade>
 }

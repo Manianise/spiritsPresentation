@@ -1,9 +1,9 @@
 $font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !default;
-$font-size : 1.2rem !default;
+$font-size : 1.4rem !default;
 $color : #ffffff !default;
 $color-element : #b55d41;
 $d-bg : linear-gradient(#000000, #151f2e);
-
+$h-height : 50px;
 
 @mixin img-fit($contain:contain, $width:100%, $maxWidth : inherit) {
     width:$width;
@@ -59,4 +59,8 @@ $d-bg : linear-gradient(#000000, #151f2e);
 @mixin d-inherit {
     width:inherit;
     height:inherit;
+}
+
+@mixin priority {
+    z-index:9999;
 }

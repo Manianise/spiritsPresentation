@@ -2,7 +2,6 @@ import CanvasParticlesBg from "../canvas/CanvasParticleBg"
 import PopUp from "../popup/PopUp"
 import { MakePopUp } from "../popup/PopUp";
 import { Zoom } from "react-awesome-reveal"
-import logo from '../../assets/logox512.webp';
 import MobileSection from "./MobileSection";
 import CogWheel from "../svg/CogWheel";
 import intro from '../../assets/video/intro.mp4'
@@ -13,6 +12,7 @@ import leparnasse from '../../assets/clients/leparnasse.webp'
 import zebrart from '../../assets/clients/zebrart.webp'
 import { useState, useRef, useEffect } from "react";
 import Input from "../form/Input";
+import Cubes from "../svg/Cubes";
 
 /**
  * 
@@ -45,7 +45,7 @@ export default function MobileVersion({size = 3000, nbrSections= 5}) {
 return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a multiplier of size </div> : 
 
 <>
-<CanvasParticlesBg className='mobile-bg' nbr={30} yStart={size} xStart={screen.availHeight} />
+<CanvasParticlesBg className='mobile-bg' nbr={30} yStart={size} xStart={screen.availWidth} />
 
 <section style={{height:`${size}px`, width:screen.availWidth}} className='mobile-version'>
 
@@ -55,14 +55,14 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
             <Zoom className='middle-frame-zoom' cascade>
 
                 <div className="small-frame" data-speed="8"></div>
-                    <img src={logo} alt="logo" className="logo" width="250" height="250" data-speed="7"/>
+                <Cubes />
                 <div className="middle-frame" data-speed="6"></div>
 
             </Zoom>
 
         <PopUp 
             x={0} 
-            y={50} 
+            y={60} 
             w={60}
             h={50}
             content='Spirits Entertainment'
@@ -118,7 +118,7 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
             fontSize={0.8} />
 
         <PopUp  
-            y={size / 5 * 2 + 130 } 
+            y={size / 5 * 2 + 150 } 
             w={80}
             h={50}
             content='Montage vidéo - Webdesign - Image'
@@ -136,7 +136,7 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
             fontSize={0.8} />
 
         <PopUp  
-            y={size / 5 * 3.5 - 120} 
+            y={size / 5 * 3.7} 
             w={80}
             h={50}
             content='Conseil - Accompagnement - Référencement'
@@ -264,7 +264,7 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
                             value={fake_field} 
                             onChange={setFakeField}/>
                         <button 
-                            className="btn btn-success col-md-12 mb-2 mt-2" 
+                            className="btn btn-info col-md-12 mb-2 mt-2" 
                             type="submit" 
                             disabled={isValid}>Envoyer</button>
                         <p> - 0 engagement - 0 publicité - 0 collecte de données -</p>

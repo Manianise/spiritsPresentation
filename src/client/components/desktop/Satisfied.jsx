@@ -15,58 +15,59 @@ export default function Satisfied() {
     return <>
                 <PopUp
                 x={3}
-                y={3}
+                y={8}
                 w={20}
                 h={35}
                 start={true}
                 content='Ils ont des milliers de visiteurs déjà ! Venez découvrir ceux qui bénéficient de nos services !' />
-                    <div style={{display:'contents'}}>
-                        <PopUp
-                            y={1}
-                            w={50}
-                            h={30}
-                            content={
-                                <SideMessage
-                                    className='size-inherit'
-                                    content={
-                                        <a  className='size-inherit satisfied-links'href='https://www.le-parnasse-versailles.fr/'>
-                                        <img className='size-inherit' src={leparnasse} style={{objectFit:'cover'}} />
-                                        
-                                    </a>
-                                }   message='Restaurant' />
-
-                            } />
-                                
-                        <PopUp
-                            y={34}
-                            w={50}
-                            h={30}
-                            content={
-                                <SideMessage
+                
+                <div style={{display:'contents'}}>
+                    <PopUp
+                        y={1}
+                        w={50}
+                        h={30}
+                        content={
+                            <SideMessage
                                 className='size-inherit'
                                 content={
-                                    <a className='size-inherit satisfied-links' href='https://cabinetlaclef.com/'>
-                                    <img className='size-inherit' src={laclef} style={{objectFit:'cover'}} />
+                                    <a  className='size-inherit satisfied-links'href='https://www.le-parnasse-versailles.fr/'>
+                                    <img className='size-inherit' src={leparnasse} style={{objectFit:'cover'}} />
+                                    
                                 </a>
-                            }   message='Cabinet Immobilier' />
+                            }   message='Restaurant' />
 
                         } />
-
-                        <PopUp
-                            y={67}
-                            w={50}
-                            h={30}
+                            
+                    <PopUp
+                        y={34}
+                        w={50}
+                        h={30}
+                        content={
+                            <SideMessage
+                            className='size-inherit'
                             content={
-                                <SideMessage
-                                className='size-inherit'
-                                content={
-                                    <a className='size-inherit satisfied-links' href='https://www.zebrart.fr/'>
-                                    <img className='size-inherit' src={zebrart} style={{objectFit:'cover'}} />
-                                </a>
-                            }   message='Collectif Web Artistes' />
+                                <a className='size-inherit satisfied-links' href='https://cabinetlaclef.com/'>
+                                <img className='size-inherit' src={laclef} style={{objectFit:'cover'}} />
+                            </a>
+                        }   message='Cabinet Immobilier' />
 
-                        } />
-                </div>
+                    } />
+
+                    <PopUp
+                        y={67}
+                        w={50}
+                        h={30}
+                        content={
+                            <SideMessage
+                            className='size-inherit'
+                            content={
+                                <a className='size-inherit satisfied-links' href='https://www.zebrart.fr/'>
+                                <img className='size-inherit' src={zebrart} style={{objectFit:'cover'}} />
+                            </a>
+                        }   message='Collectif Web Artistes' />
+
+                    } />
+            </div>
                 <CanvasParticleBg nbr={25} />
             </>
 

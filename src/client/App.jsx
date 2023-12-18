@@ -5,9 +5,9 @@ import Skills from './components/desktop/Skills'
 import Satisfied from './components/desktop/Satisfied'
 import ContactPage from './components/desktop/ContactPage'
 import MobileVersion from './components/mobile/MobileVersion';
+import Header from './components/header/Header';
 import ModalAI from './components/modals/ModalAI';
-import {createPortal} from 'react-dom'
-import { Fade } from 'react-awesome-reveal';
+import { ReactSVG } from 'react-svg';
 
 
 function DesktopVersion() {
@@ -43,20 +43,27 @@ function DesktopVersion() {
     </section>
 }
 
-
 export default function App() {
 
-    const App = screen.availWidth > 900 ? <DesktopVersion /> : <MobileVersion />
+    const handleClick = () => {
+        console.log('light mode')
+    }
+
+    const items = [
+        <ModalAI />,
+        <div onClick={handleClick}>
+            <ReactSVG src="./svg/sun.svg"/>{' '}
+        </div>
+    ]
+
+    const App = () => screen.availWidth > 900 ? <DesktopVersion /> : <MobileVersion />
 
     return <>
-    
-    {App}
 
-    {createPortal(<Fade delay={3000} className='modal-ai'>
-                    <ModalAI />
-                </Fade>, document.querySelector('#root'))}
-            </>
-    
+        <Header items={items} />
+        <App />
+
+    </>
 
 }
 

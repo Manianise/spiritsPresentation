@@ -51,7 +51,7 @@ export default function ContactPage() {
                         value={fake_field} 
                         onChange={setFakeField}/>
                     <button 
-                        className="btn btn-success col-md-12 mb-2 mt-2" 
+                        className="btn btn-info col-md-12 mb-2 mt-2" 
                         type="submit" 
                         disabled={isValid}>Envoyer</button>
                     <p> - 0 engagement - 0 publicité - 0 collecte de données -</p>

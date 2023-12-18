@@ -6,10 +6,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from './error_page.jsx';
 import './index.scss'
-import './css/popup-screen.scss'
 import './css/slider.scss'
-import './css/side-message.scss'
-import './css/cogwheels.scss'
 import Loader from './components/loader/Loader.jsx';
 import { lazy } from 'react';
 

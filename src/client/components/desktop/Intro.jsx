@@ -1,11 +1,11 @@
 import ParticleAnimation from '../canvas/ParticleAnimation';
 import CanvasParticleBg from '../canvas/CanvasParticleBg';
 import PopUp from '../popup/PopUp';
-import logo from '../../assets/logox512.webp';
 import { Zoom } from 'react-awesome-reveal';
 import useCount from '../../hooks/useCount';
 import { useRef, useEffect, memo, useMemo } from 'react';
 import { parallaxOnMouseMove } from '../../utils/Utils';
+import Cubes from '../svg/Cubes';
 
 /**
  *
@@ -36,7 +36,7 @@ export default function Intro() {
         <div ref={layersCtnRef} className="layers">
             <Zoom className='middle-frame-zoom' cascade>
                 <div className="small-frame" data-speed="8"></div>
-                <img src={logo} alt="logo" className="logo" data-speed="7" />
+                <Cubes />
                 <div className="middle-frame" data-speed="6"></div>
 
             </Zoom>
@@ -46,7 +46,7 @@ export default function Intro() {
         </div>
         <PopUp
             x={3}
-            y={3}
+            y={8}
             w={25}
             h={10}
             content='Spirits Entertainment'

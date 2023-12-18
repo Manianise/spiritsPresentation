@@ -1,9 +1,11 @@
 @use './css/default';
+@use './css/animations' as animate;
 
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, Roboto, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
+	font-size: default.$font-size;
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
@@ -16,24 +18,46 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+/***********************************************************
 
-body {
-	margin:0;
-	background: transparent;
-}
+	HEADER
 
-/*
-	Modals
 ***************************************************************/
 
-.modal-ai {
+.header {
 	position:fixed;
-    left:90vw;
-    top:1vh;
-	z-index:100
+	height : default.$h-height;
+	@include default.priority;
+	background: #0000007c;
 }
 
-/* Loaders
+.header svg {
+	width: 50px;
+	max-width: 16px;
+}
+
+.header svg path {
+	fill:white;
+}
+
+.header-menu {
+	@include default.d-flex($j-content:flex-end);
+}
+
+.header-menu-item {
+	background: #151f2e8e;
+	@include default.d-flex;
+	width: 50px;
+	height:50px;
+}
+
+
+
+
+/* **************************************************************
+
+Loaders
+
 ***************************************************************/
 
 .video-spinner {
@@ -118,10 +142,6 @@ General CSS
 	color: default.$color;
 }
 
-.priority {
-	z-index : 9999 !important;
-}
-
 /***************************************
 
 Mobile
@@ -170,17 +190,11 @@ Intro page
 
 .layers {
     @include default.d-size;
+	z-index:1;
 }
 
 .middle-frame-zoom {
     @include default.d-position;
-}
-
-.logo {
-    width: 250px;
-    height: 250px;
-    z-index:2;
-    background: radial-gradient(#CCC48B, transparent 70%); ;
 }
 
 .small-frame {
@@ -204,11 +218,6 @@ Intro page
     border: 12px solid #de6e49;
 }
 
-.layers {
-    
-    z-index:10;
-}
-
 
 /**************************************
 
@@ -225,6 +234,220 @@ Satisfied page
     opacity:0.1;
 }
 
+/**************************************
+
+Pop-Up Screens
+
+*****************************************/
+
+.popup-ctn, .static-ctn-style, .static-div-style, .popup-span {
+    @include default.d-flex;
+}
+
+.static-ctn-style {
+
+    position:relative;
+    border-radius: 10px;
+    z-index: 5;
+
+}
+
+.static-div-style {
+
+    position:relative;
+    background-color: #151f2e8e;
+    font-family : default.$font-family;
+    color: default.$color;
+    text-align: center;
+}
+
+.popup-span {
+    @include default.d-inherit;
+}
+
+
+/**************************************
+
+Modal
+
+*****************************************/
+
+
+:root .modal {
+	z-index:100000;
+  }
+:root .modal-header {
+	@include default.d-flex($direction:column);
+	flex-flow: column-reverse;
+}
+
+:root .modal-header button {
+
+	background:white;
+
+}
+
+:root .modal-ai-img img {
+	object-fit: contain;
+	width:100%;
+}
+
+  :root .btn-info, .modal-title {
+
+  line-height: 1.5;
+  font-weight: 600;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+
+  }
+
+  :root .modal-content {
+	background:linear-gradient(#000000, #151f2e);
+  }
+
+  :root .btn-info {
+
+	  background: transparent;
+	  border : 3px solid rgb(37, 207, 242);
+  }
+
+  :root .btn-info:hover {
+	  background-color:rgba(37, 207, 242, 0.3)
+  }
+
+
+/**************************************
+
+Cogwheels
+
+*****************************************/
+
+.cogwheel {
+    @include default.d-position;
+}
+
+.cog-skills-ctn {
+
+    position: relative;
+    display:grid;
+    grid-template : 
+    "c2 c2 c2 . ." 50px
+    "c2 c2 c2 c1 c1"
+    "c2 c2 c2 c1 c1"
+    ". . . c3 c3"
+    ". . . c3 c3";
+    z-index:8;
+}
+
+.wrapper {
+    position:relative;
+    @include default.d-flex;
+}
+
+#cog-1 {
+    grid-area : c1;
+}
+
+#cog-2 {
+    grid-area : c2;
+    left:32px;
+}
+
+#cog-3 {
+    grid-area : c3;
+    top:-30px;
+}
+
+.cls-2{
+
+    fill:none;
+    stroke-miterlimit:10;
+    stroke-width:10px;
+}
+
+.spin-left {
+    @include animate.rotate('left');
+}
+
+.spin-right {
+    @include animate.rotate('right');
+}
+
+
+/**************************************
+
+Side Message
+
+*****************************************/
+
+@mixin position-message($side) {
+
+    top: -10px;
+    position:absolute;
+
+    @if $side != 'left' and $side != 'right' {
+        @error "Property #{$side} must be either left or right.";
+      }
+
+    @if $side == 'left' {
+
+        left: 0vw;
+
+    }
+    @if $side == 'right' {
+
+        left: -16vw;
+        text-align: right;
+
+    }
+}
+
+.appear-left {
+    @include position-message(left)
+}
+
+.appear-right {
+    @include position-message(right)
+}
+
+.side-message-ctn {
+
+    @include default.d-flex;
+    z-index:9;
+
+}
+
+.side-message {
+
+    font-family: default.$font-family;
+    color: default.$color;
+    @include default.dmp(0 0.5rem);
+    @include default.d-position;
+    width:15vw;
+}
+/**************************************
+
+Cubes
+
+*****************************************/
+
+.cubes {
+	@include default.d-flex;
+}
+
+#light-cube {
+	z-index:2;
+	position:absolute;
+	background: radial-gradient(#5ae5e5, transparent 80%);
+	@include animate.rotate('right', 10)
+}
+
+#light-cube-bg {
+	@include animate.rotate('left', 30);
+}
+
+
+
 
 /**************************************
 
@@ -233,17 +456,20 @@ Some responsive
 *****************************************/
 
 @media screen  and (min-width: 900px){
-	.mobile-version {
-		display:none;
-	}
+
 	body {
 		overflow: hidden;
+		background:transparent;
 	}
 }
 
 @media screen and (max-width: 900px){
-	.desktop-version {
-		display:none;
+	:root {
+		font-size:0.9rem;
+	}
+
+	* {
+		margin:0 !important;
 	}
 	.popup-ctn {
 		overflow-x: hidden;

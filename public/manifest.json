@@ -3,34 +3,24 @@
   "name": "Presenting Port-Folio",
   "icons": [
     {
-      "src": "logo- 32x32.ico",
-      "sizes": "32x32",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo- 48x48.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo- 16x16.ico",
+      "src": "favico_io/favico.ico",
       "sizes": "16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logox192.webp",
-      "type": "image/webp",
-      "sizes": "192x192"
+      "src": "x150.png",
+      "type": "image/png",
+      "sizes": "150x150"
     },
     {
-      "src": "logox180.webp",
-      "type": "image/webp",
+      "src": "x300.png",
+      "type": "image/png",
       "sizes": "180x180"
     },
     {
-      "src": "logox512.webp",
-      "type": "image/webp",
-      "sizes": "512x512"
+      "src": "x450",
+      "type": "image/png",
+      "sizes": "450x450"
     }
   ],
   "start_url": ".",
@@ -40,14 +30,14 @@
   "description": "Slider for presentation",
   "screenshots": [
     {
-      "src": "screenshot_wide.webp",
-      "type": "image/webp",
+      "src": "wide_screen.PNG",
+      "type": "image/png",
       "sizes": "720x540",
       "form_factor": "wide"
     },
     {
-      "src": "screenshot_narrow.webp",
-      "type": "image/webp",
+      "src": "narrow_screen.PNG",
+      "type": "image/png",
       "sizes": "380x540",
       "form_factor": "narrow"
     }

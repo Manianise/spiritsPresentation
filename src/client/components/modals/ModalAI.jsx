@@ -20,7 +20,6 @@ export default function ModalAI({className}) {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
-  const {theme} = useTheme()
   
   return (
   <div className={className}>
@@ -37,7 +36,7 @@ export default function ModalAI({className}) {
         <Modal.Header closeButton>
           <div className="modal-header">
             <VideoSpinner path={AIvideo} />
-            <h5 class={`modal-title`} style={{color:'white'}} >Nos Créations</h5>
+            <h5 className={`modal-title`} style={{color:'white'}} >Nos Créations</h5>
           </div>
         </Modal.Header>
         <Modal.Body>

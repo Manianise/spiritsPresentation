@@ -13,6 +13,7 @@ import zebrart from '../../assets/clients/zebrart.webp'
 import { useState, useRef, useEffect } from "react";
 import Input from "../form/Input";
 import Cubes from "../svg/Cubes";
+import { useTheme } from "../../hooks/useTheme";
 
 /**
  * 
@@ -23,6 +24,7 @@ export default function MobileVersion({size = 3000, nbrSections= 5}) {
 
     const build = size / nbrSections
     const canBeBuilt = Number.isInteger(build)
+    const {theme} = useTheme()
 
 
     // Handling form
@@ -45,7 +47,7 @@ export default function MobileVersion({size = 3000, nbrSections= 5}) {
 return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a multiplier of size </div> : 
 
 <>
-<CanvasParticlesBg className='mobile-bg' nbr={30} yStart={size} xStart={screen.availWidth} />
+<CanvasParticlesBg className={`mobile-bg ${theme}`} nbr={30} yStart={size} xStart={screen.availWidth} />
 
 <section style={{height:`${size}px`, width:screen.availWidth}} className='mobile-version'>
 

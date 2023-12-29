@@ -15,7 +15,7 @@ export default function Satisfied() {
     return <>
                 <PopUp
                 x={3}
-                y={8}
+                y={10}
                 w={20}
                 h={35}
                 start={true}

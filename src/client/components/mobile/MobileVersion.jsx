@@ -127,7 +127,7 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
             fontSize={0.8} />
 
         <PopUp  
-            y={size / 5 * 3 - 150} 
+            y={size / 5 * 3 - 25} 
             w={80}
             h={50}
             content='Déploiement de sites web'
@@ -156,7 +156,7 @@ return !canBeBuilt ? <div className="alert alert-danger"> nbrSections must be a 
                 </video>
             </CogWheel>
 
-            <CogWheel size={250} orientation='right'>
+            <CogWheel size={250}>
                 <video 
                     width={280} 
                     autoPlay

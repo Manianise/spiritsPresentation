@@ -1,1 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130.17 147"><defs><radialGradient id="radial-gradient" cx="66.77" cy="87.73" fx="66.77" fy="87.73" r="73.94" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset=".04" stop-color="#e9eaec"/><stop offset=".13" stop-color="#b8bbbf"/><stop offset=".24" stop-color="#8c9198"/><stop offset=".34" stop-color="#676e77"/><stop offset=".45" stop-color="#49515c"/><stop offset=".57" stop-color="#323b48"/><stop offset=".69" stop-color="#212b39"/><stop offset=".82" stop-color="#182130"/><stop offset="1" stop-color="#151f2e"/></radialGradient><radialGradient id="radial-gradient-2" cx="76.38" cy="74.7" fx="76.38" fy="74.7" r="80.41" xlink:href="#radial-gradient"/><radialGradient id="radial-gradient-3" cx="60.69" cy="74.66" fx="60.69" fy="74.66" r="77.9" xlink:href="#radial-gradient"/></defs><g id="Layer_1-2"><g><polygon points="5.94 113.03 65.1 145.85 124.56 112.07 67.58 82.15 5.94 113.03" fill="url(#radial-gradient)" stroke="#b45c40" stroke-miterlimit="10" stroke-width="2"/><polygon points="71.1 1.82 71.73 77.23 128.71 107.15 129.17 38.28 71.1 1.82" fill="url(#radial-gradient-2)" stroke="#b45c40" stroke-miterlimit="10" stroke-width="2"/><polygon points="65.79 2.03 2.15 36.91 1.03 108.89 65.52 76.28 65.79 2.03" fill="url(#radial-gradient-3)" stroke="#b45c40" stroke-miterlimit="10" stroke-width="2"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130.17 147"><defs>
+    <radialGradient 
+        id="radial-gradient" 
+        cx="66.77" 
+        cy="87.73" 
+        fx="66.77" 
+        fy="87.73" 
+        r="73.94" 
+        gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset=".04" stop-color="#e9eaec"/>
+            <stop offset=".13" stop-color="#b8bbbf"/>
+            <stop offset=".24" stop-color="#8c9198"/>
+            <stop offset=".34" stop-color="#676e77"/>
+            <stop offset=".45" stop-color="#49515c"/>
+            <stop offset=".57" stop-color="#323b48"/>
+            <stop offset=".69" stop-color="#212b39"/>
+            <stop offset=".82" stop-color="#182130"/>
+            <stop offset="1" stop-color="#151f2e"/>
+    </radialGradient>
+    <radialGradient 
+        id="radial-gradient-2" 
+        cx="76.38" cy="74.7" 
+        fx="76.38" 
+        fy="74.7" 
+        r="80.41" 
+        xlink:href="#radial-gradient"/>
+    <radialGradient 
+        id="radial-gradient-3" 
+        cx="60.69" 
+        cy="74.66" 
+        fx="60.69" 
+        fy="74.66" r="77.9"
+        xlink:href="#radial-gradient"/>
+    </defs><g id="Layer_1-2"><g><polygon points="5.94 113.03 65.1 145.85 124.56 112.07 67.58 82.15 5.94 113.03" fill="url(#radial-gradient)" stroke="#b45c40" stroke-miterlimit="10" stroke-width="2"/><polygon points="71.1 1.82 71.73 77.23 128.71 107.15 129.17 38.28 71.1 1.82" fill="url(#radial-gradient-2)" stroke="#b45c40" stroke-miterlimit="10" stroke-width="2"/><polygon points="65.79 2.03 2.15 36.91 1.03 108.89 65.52 76.28 65.79 2.03" fill="url(#radial-gradient-3)" stroke="#b45c40" stroke-miterlimit="10" stroke-width="2"/></g></g></svg>

@@ -11,7 +11,7 @@ export default function Presentation() {
     <CanvasParticleBg nbr={40} />
     <PopUp 
 x={3} 
-y={8} 
+y={13} 
 w={25}
 h={10}
 content='Qui sommes-nous ?' />

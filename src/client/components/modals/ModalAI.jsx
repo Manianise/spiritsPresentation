@@ -5,6 +5,7 @@ import { faBrain } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { VideoSpinner } from '../loader/VideoSpinner';
 import { Gallery } from '../../assets/bg/Gallery';
+import { useTheme } from '../../hooks/useTheme';
 
 
 
@@ -16,11 +17,10 @@ import { Gallery } from '../../assets/bg/Gallery';
 
 export default function ModalAI({className}) {
 
-console.log(Gallery)
-
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+  const {theme} = useTheme()
   
   return (
   <div className={className}>
@@ -37,7 +37,7 @@ console.log(Gallery)
         <Modal.Header closeButton>
           <div className="modal-header">
             <VideoSpinner path={AIvideo} />
-            <Modal.Title>Nos créations</Modal.Title>
+            <h5 class={`modal-title`} style={{color:'white'}} >Nos Créations</h5>
           </div>
         </Modal.Header>
         <Modal.Body>

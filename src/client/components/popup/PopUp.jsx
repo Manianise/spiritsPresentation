@@ -1,3 +1,4 @@
+import { useTheme } from '../../hooks/useTheme';
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 
 /**
@@ -6,6 +7,7 @@ import { useIntersectionObserver } from "@uidotdev/usehooks";
  * @param {int} delay in milliseconds before the animation starts
  * @param {int} speed in milliseconds for the animation speed
  * @param {string} resW and resH convert top, width and height into any resolution, but left is in vw
+ * @param {bool} isActive Can set the popup to manually trigger
  * @borderSize is in px and textSize is in rem
  * @returns the point is to make a PopUp independant from viewport scrolling. In order to do that, add a 'isActive={true}' param
  */
@@ -13,15 +15,16 @@ import { useIntersectionObserver } from "@uidotdev/usehooks";
 export function MakePopUp({borderSize = 3, 
                             resW = 'vw', 
                             resH = 'vh', 
-                            fontSize = 1.2, 
                             delay = 1500,
                             className = '',
+                            position = 'absolute',
                              ...props }) {
 
+    const {isDark} = useTheme()
 
     return <div ref={props.onRef} className={`popup-ctn ${className}`}
             style={{
-            position: 'absolute',
+            position: position,
             left : props.x + resW,
             top : props.y + resH,
             zIndex: props.zIndex,
@@ -29,24 +32,30 @@ export function MakePopUp({borderSize = 3,
             <div  
                 className={`static-ctn-style ${props.start ? 'slideInLeft' : 'slideInRight'} ${props.isActive && 'activeX'}`}
                 style={{
-                    width : props.w + resW,
-                    height : props.h + resH
+                    position:'relative',
+                    width: props.w + resW,
+                    height : props.h + resH,
                 }} >
                         <div 
-                        className={`static-div-style ${props.isActive && 'open'}`} 
-                        style={{ 
-                            width: props.w + resW,
-                            height : 0 + resH,
-                            border: `${borderSize}px solid #DE6E49`,
-                            borderRadius: `${borderSize > 5 ? 10 : 5 }px`,
-                            animationDelay:`${delay}ms`
+                            className={`static-div-style ${props.isActive && 'open'}`} 
+                            style={{
+                                background:`${isDark ? '#151f2e8e' : '#ffffff1e'}`,
+                                color:`${isDark ? '#ffffff' : '#696f8a'}`,
+                                position:'relative',
+                                transition: '1.5s all ease',
+                                width: `${props.w}vw`,
+                                height : 0 + resH,
+                                border: `${borderSize}px solid #DE6E49`,
+                                borderRadius: `${borderSize > 5 ? 10 : 5 }px`,
+                                animationDelay:`${delay}ms`
                         }}>
-                            <span className={`popup-span ${props.isActive && 'fadeIn'}`}
-                                
+                            <span 
+                                className={`popup-span ${props.isActive && 'fadeIn'}`}
                                 style={{
                                     opacity:0,
-                                    fontSize:`${props.fontSize}rem`,
-                                    animationDelay:`${delay + 1000}ms`
+                                    fontSize:'10rem !important',
+                                    animationDelay:`${delay + 1000}ms`,
+                                    padding :'5px'
                                     }}>
                                     {props.content}
                             </span>

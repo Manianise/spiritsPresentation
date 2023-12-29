@@ -3,7 +3,7 @@ import CanvasParticleBg from '../canvas/CanvasParticleBg';
 import PopUp from '../popup/PopUp';
 import { Zoom } from 'react-awesome-reveal';
 import useCount from '../../hooks/useCount';
-import { useRef, useEffect, memo, useMemo } from 'react';
+import { useRef, useEffect, memo } from 'react';
 import { parallaxOnMouseMove } from '../../utils/Utils';
 import Cubes from '../svg/Cubes';
 
@@ -12,13 +12,13 @@ import Cubes from '../svg/Cubes';
  * @returns the static page of 1st slide
  */
 
+const MemoParticleEffect = memo(ParticleAnimation)
+
 export default function Intro() {
 
     
-    const layersCtnRef = useRef(null);
+    const layersCtnRef = useRef();
     const { count, limit } = useCount({ limit: 1 });
-    const nbr = useMemo(() => {return 20})
-
 
     useEffect(() => {
 
@@ -33,20 +33,18 @@ export default function Intro() {
 
 
     return count > limit && <>
+
         <div ref={layersCtnRef} className="layers">
             <Zoom className='middle-frame-zoom' cascade>
                 <div className="small-frame" data-speed="8"></div>
                 <Cubes />
                 <div className="middle-frame" data-speed="6"></div>
-
             </Zoom>
         </div>
-        <div className='particle-animation'>
-            <ParticleMemo nbr={nbr} />
-        </div>
+        <MemoParticleEffect nbr={10} />
         <PopUp
             x={3}
-            y={8}
+            y={13}
             w={25}
             h={10}
             content='Spirits Entertainment'
@@ -62,5 +60,3 @@ export default function Intro() {
 
     </>
 }
-
-const ParticleMemo = memo(ParticleAnimation)

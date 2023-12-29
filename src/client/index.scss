@@ -8,15 +8,35 @@
 	font-size: default.$font-size;
 
 	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background: default.$d-bg;
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 }
+
+svg {
+	vertical-align: middle;
+}
+
+/***********************************************************
+
+	HANDLETHEME
+
+***************************************************************/
+
+.light {
+	@include default.theme($theme:'light')
+}
+
+.dark {
+	@include default.theme($theme:'dark');
+}
+
+.logo-svg-lightmode polygon {
+	fill:rgba(255, 255, 255, 0.336);
+}
+
 
 /***********************************************************
 
@@ -28,7 +48,6 @@
 	position:fixed;
 	height : default.$h-height;
 	@include default.priority;
-	background: #0000007c;
 }
 
 .header svg {
@@ -40,12 +59,15 @@
 	fill:white;
 }
 
+.header.light svg path {
+	@include default.theme($theme:'light')
+}
+
 .header-menu {
 	@include default.d-flex($j-content:flex-end);
 }
 
-.header-menu-item {
-	background: #151f2e8e;
+.header-menu-item, .header-menu-item div {
 	@include default.d-flex;
 	width: 50px;
 	height:50px;
@@ -183,7 +205,7 @@ Intro page
 
 *****************************************/
 
-.layers, .particle-animation {
+.layers {
     @include default.d-flex;
     @include default.d-position;
 }
@@ -204,8 +226,7 @@ Intro page
     border-radius: 30px;
     opacity: 0.3;
     filter:blur(0.1rem);
-    background-color: #151f2e8e;
-    border: 10px solid #de6e49;
+    border: 10px solid default.$color-element;
 }
 
 .middle-frame {
@@ -215,7 +236,7 @@ Intro page
     border-radius: 30px;
     opacity: 0.8;
     z-index:3;
-    border: 12px solid #de6e49;
+    border: 12px solid default.$color-element;
 }
 
 
@@ -254,10 +275,7 @@ Pop-Up Screens
 
 .static-div-style {
 
-    position:relative;
-    background-color: #151f2e8e;
     font-family : default.$font-family;
-    color: default.$color;
     text-align: center;
 }
 
@@ -273,47 +291,22 @@ Modal
 *****************************************/
 
 
-:root .modal {
+:root .modal * {
+	background: transparent;
 	z-index:100000;
   }
+
 :root .modal-header {
 	@include default.d-flex($direction:column);
 	flex-flow: column-reverse;
 }
 
-:root .modal-header button {
-
-	background:white;
-
-}
 
 :root .modal-ai-img img {
 	object-fit: contain;
 	width:100%;
 }
 
-  :root .btn-info, .modal-title {
-
-  line-height: 1.5;
-  font-weight: 600;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-
-  }
-
-  :root .modal-content {
-	background:linear-gradient(#000000, #151f2e);
-  }
-
-  :root .btn-info {
-
-	  background: transparent;
-	  border : 3px solid rgb(37, 207, 242);
-  }
-
-  :root .btn-info:hover {
-	  background-color:rgba(37, 207, 242, 0.3)
-  }
 
 
 /**************************************
@@ -322,47 +315,41 @@ Cogwheels
 
 *****************************************/
 
+.cog-skills-ctn, .wrapper, #cog-1, #cog-2, #cog-3 {
+	position:relative;
+}
+
+
 .cogwheel {
     @include default.d-position;
 }
 
 .cog-skills-ctn {
 
-    position: relative;
     display:grid;
     grid-template : 
-    "c2 c2 c2 . ." 50px
-    "c2 c2 c2 c1 c1"
-    "c2 c2 c2 c1 c1"
-    ". . . c3 c3"
-    ". . . c3 c3";
+    "c2 c2 c1 c1 c3 c3"
+	"c2 c2 c1 c1 c3 c3";
     z-index:8;
 }
 
 .wrapper {
-    position:relative;
     @include default.d-flex;
 }
 
 #cog-1 {
     grid-area : c1;
+	left: 30px;
 }
 
 #cog-2 {
     grid-area : c2;
-    left:32px;
+	top: -30px;
 }
 
 #cog-3 {
     grid-area : c3;
-    top:-30px;
-}
-
-.cls-2{
-
-    fill:none;
-    stroke-miterlimit:10;
-    stroke-width:10px;
+	left: -30px;
 }
 
 .spin-left {

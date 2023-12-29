@@ -61,8 +61,6 @@ PopUp
         height: 0;
     }
     100% {
-        display: flex;
-        align-content: center;
         height:inherit;
     }
     
@@ -134,14 +132,12 @@ PopUp
 }
 
 .slideInRight {
-    position: relative;
     transform: translateX(100vw);
     transition: 1.5s all ease;
 }
 
 
 .slideInLeft {
-    position: relative;
     transform: translateX(-100vw);
     transition: 1.5s all ease;
 }

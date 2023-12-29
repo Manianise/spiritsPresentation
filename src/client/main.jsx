@@ -9,6 +9,7 @@ import './index.scss'
 import './css/slider.scss'
 import Loader from './components/loader/Loader.jsx';
 import { lazy } from 'react';
+import { ThemeContextProvider } from './hooks/useTheme.jsx';
 
 function LazyApp() {
 
@@ -31,6 +32,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeContextProvider>
+      <RouterProvider router={router} />
+    </ThemeContextProvider>
   </React.StrictMode>,
 )

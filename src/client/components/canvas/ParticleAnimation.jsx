@@ -1,20 +1,23 @@
-import React, { useRef, useEffect, useState, useLayoutEffect } from 'react'
+import React, { useRef, useEffect, useState, useLayoutEffect, Suspense } from 'react'
 import Particle from '../../class/Particle'
 import Canvas from './Canvas'
 import {getRandomColor, getRandomNumber, clear} from '../../utils/Utils'
+import { createPortal } from 'react-dom'
+import SpinnerAspect from '../loader/SpinnerAspect'
 
 /**
  * 
  * @param {int} nbr : nbr of particles in animation default : 1 
  * @returns 
  */
+
 export default function ParticleAnimation({nbr = 1}) {
     
-    const canvasRef = useRef(null)
+    const canvasRef = useRef()
     const [counter, setCounter] = useState(0)
 
-    const cSizeX = window.innerWidth * 1.2
-    const cSizeY = window.innerHeight * 1.2
+    const cSizeX = screen.availWidth * 1.2
+    const cSizeY = screen.availHeight * 1.2
 
     useLayoutEffect(() => {
 
@@ -54,12 +57,17 @@ export default function ParticleAnimation({nbr = 1}) {
           }
         
     }
-
-    return cancelAnimationFrame(counter)
-
+    return () => cancelAnimationFrame(counter)
     }, [counter])
 
 
-  return <Canvas onRef={canvasRef} w={cSizeX} h={cSizeY} />
+  return <div style={{
+                    position:'absolute', 
+                    width:`${cSizeX}px`, 
+                    height:`${cSizeY}px`}}>
+            <Canvas onRef={canvasRef} w={cSizeX} h={cSizeY} zIndex={5} />
+        </div>
+
+  
 
 }

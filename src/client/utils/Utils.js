@@ -100,15 +100,13 @@ export const mapRange = (a, b, c, d, e) => {
         
       }
 }
-  
-  
+
   /**
    * 
    * @param {*} func function on which we apply debouncer
    * 
    * @returns 
    */
-  
   
   export default function debounce(func, timeout = 300){
     let timer;

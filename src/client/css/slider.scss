@@ -67,25 +67,3 @@
 	// background-color: #4f4872;
 	background-color: #fff;
 }
-
-
-/* Responsive CSS carousel
-***************************************************************/
-
-@media only screen and (max-width:1080px) {
-
-	.button-carousel-container .button-carousel i {
-		width:20px;
-		height:20px;
-	}
-	
-}
-
-@media only screen and (max-width:560px) {
-
-	.button-carousel-container {
-		display:none;
-	}
-	
-
-}

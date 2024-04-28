@@ -3,6 +3,7 @@ import { useToggle } from '../../hooks/useToggle';
 import useChangeSlide from '../../hooks/useChangeSlide';
 import useCount from '../../hooks/useCount';
 import SideMessage from '../string/SideMessage';
+import Swipeable from '../swipe/Swipeable';
 
 /**
  * 
@@ -111,18 +112,19 @@ export default function Slider({...props}) {
     const {state, next, previous, goTo} = useChangeSlide({base : 0, max:slides.length})
     const {count, limit} = useCount({limit:props.delay})
 
-    return <div className="slider-container">
-                <div className="slider-gallery" style={{width: slides.length * 100 + 'vw'}}>
-                            { slides.map(slide => <Slide 
-                                                    itemProp='exampleOfWork'
-                                                    id={slide.id} 
-                                                    key={slide.id} 
-                                                    content={slide.content}
-                                                    position={state}
-                                                    isActive={isActive}
-                                                    onActiveChange={setIsActive} />)
-                            }
-                </div>
+    return <Swipeable L={previous} R={next}>
+            <div className="slider-container" >
+                <div className="slider-gallery" style={{width: slides.length * 100 + 'vw'}} >
+                                    { slides.map(slide => <Slide 
+                                                            itemProp='exampleOfWork'
+                                                            id={slide.id} 
+                                                            key={slide.id} 
+                                                            content={slide.content}
+                                                            position={state}
+                                                            isActive={isActive}
+                                                            onActiveChange={setIsActive} />)
+                                    }
+                        </div>
                 <div className="slider-items">
                     {!props.buttons && count > limit && <Buttons
                                         onNext={next}
@@ -138,6 +140,7 @@ export default function Slider({...props}) {
                 </div>
 
             </div>
+         </Swipeable>
 }
 
 

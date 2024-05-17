@@ -1,0 +1,87 @@
+$font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !default;
+$font-size : 1.4rem !default;
+$color : rgba(255, 255, 255, 0.87) !default;
+$color-element : #b55d41;
+$d-bg : linear-gradient(#000000, #151f2e);
+$h-height : 70px;
+
+
+@mixin theme($theme:'dark') {
+
+    @if $theme != 'dark' and $theme != 'light' {
+        @error "Property #{$theme} must be either dark or light.";
+      }
+    
+    @if $theme == 'dark' {
+        background: $d-bg;
+        color:#ffffff;
+        $color-element : #b55d41;
+    }
+    @if $theme == 'light' {
+        background: linear-gradient(#ffffffff, #696f8a);;
+        color:#696f8a !important;
+        fill:#696f8a;
+        $color-element : #696f8a;
+    }
+
+}
+
+@mixin img-fit($contain:contain, $width:100%, $maxWidth : inherit) {
+    width:$width;
+    object-fit: $contain;
+    max-width: $maxWidth;
+}
+
+
+@mixin d-flex($a-items:center, $j-content:center, $direction:row) {
+
+    display: flex;
+    align-items: $a-items !important;
+    justify-content: $j-content !important;
+    flex-direction: $direction;
+
+}
+
+
+@mixin d-size {
+
+    width: 100vw;
+	height: 100vh;
+	background: transparent;
+
+}
+
+
+@mixin d-display {
+
+    display:none;
+
+}
+
+@mixin d-position {
+
+    position:absolute;
+}
+
+@mixin d-opacity {
+
+    opacity:0;
+	transition: opacity 1s linear;
+
+}
+
+@mixin dmp($margin:0,$padding:0) {
+
+    margin : $margin;
+    padding: $padding;
+
+}
+
+@mixin d-inherit {
+    width:inherit;
+    height:inherit;
+}
+
+@mixin priority {
+    z-index:9999;
+}

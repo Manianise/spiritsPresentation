@@ -1,0 +1,155 @@
+// **********************************
+// Spin
+// **********************************
+
+@mixin rotate($orientation, $time:5, $spin:"") {
+
+    @if $orientation != 'left' and $orientation != 'right' {
+        @error "Property #{$side} must be either left or right.";
+      }
+
+    @if($orientation == 'left') {
+        $spin: spinLeft;
+    }
+    @if($orientation == 'right') {
+        $spin: spinRight;
+    }
+    animation: $spin $time + s linear infinite;
+}
+
+@keyframes spinRight {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes spinLeft {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+    
+}
+
+/***************************************
+PopUp
+
+***************************************/
+
+
+
+@keyframes open {
+
+    0% {
+        height: 0;
+    }
+    100% {
+        height:inherit;
+    }
+    
+}
+
+@-webkit-keyframes open {
+
+    0% {
+        height: 0;
+    }
+    100% {
+        height:inherit;
+    }
+    
+}
+
+@keyframes fadeIn {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+
+@-webkit-keyframes fadeIn {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+    
+}
+
+@-webkit-keyframes slideInRight {
+
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes slideInLeft {
+
+    from {
+        transform: translateX(-100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+    
+}
+
+@-webkit-keyframes slideInLeft {
+
+    from {
+        transform: translateX(-100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+    
+}
+
+.slideInRight {
+    transform: translateX(100vw);
+    transition: 1.5s all ease;
+}
+
+
+.slideInLeft {
+    transform: translateX(-100vw);
+    transition: 1.5s all ease;
+}
+
+.slideInLeft.activeX, .slideInRight.activeX {
+    transform: translateX(0);
+}
+
+.open {
+    animation : open 1s forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 1s forwards;
+}

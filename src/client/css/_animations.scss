@@ -2,10 +2,12 @@
 // Spin
 // **********************************
 
-@mixin rotate($orientation, $time:5, $spin:"") {
+@mixin rotate($orientation, $time:5) {
+
+    $spin: '';
 
     @if $orientation != 'left' and $orientation != 'right' {
-        @error "Property #{$side} must be either left or right.";
+        @error "Property #{$orientation} must be either left or right.";
       }
 
     @if($orientation == 'left') {

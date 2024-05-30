@@ -154,6 +154,23 @@ Loaders
 
 /*****************
 
+GEARS - INTRO
+
+******************/
+
+.items {
+	position:absolute;
+	}
+
+#GEAR {z-index:1;width:250px;}
+#INNERLIGHT {z-index:5;width:60px;}
+#INNERCIRCLE {z-index:2;width:127px;}
+#DARKERLIGHT{z-index:5;width:70px;}
+.plus{ @include animate.rotate('right', 10)};
+.minus{ @include animate.rotate('left', 7);}
+
+/*****************
+
 General CSS
 
 ******************/

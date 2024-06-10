@@ -1,11 +1,8 @@
 FROM nginx:stable-alpine
 
-RUN addgroup -S nonroot \
-    && adduser -S nonroot -G nonroot
+RUN adduser -S nonroot -G sudo
 
 USER nonroot
-
-ENTRYPOINT ["id"]
 
 COPY ./dist /usr/share/nginx/html
 

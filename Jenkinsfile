@@ -6,8 +6,15 @@ pipeline {
     environment {
         SONARQUBE_SERVER = 'Sonar server'
         DOCKER_HUB_PAT = credentials('docker_login')
+        
     }
+
     stages {
+        stage('clone') {
+            steps {
+                git 'https://github.com/Manianise/spiritsPresentation'
+            }
+        }
         stage('install') {
             steps {
                 sh '''
@@ -51,18 +58,29 @@ pipeline {
                 '''
             }
         }
-        stage('post') {
-            steps {
-                post {
-                    always {
-                        // Clean up actions, e.g., archive artifacts, notify, etc.
-                        archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
-                        junit '**/target/surefire-reports/*.xml'
-                    }
-                }     
-            }
-        }
 
     }
+    post {
+        always {
+            echo 'This always runs'
+            // Actions that always run go here, e.g., cleaning up, sending notifications
+        }
+        success {
+            echo 'This runs only if the pipeline succeeds'
+            // Actions that run on success go here, e.g., notifying success
+        }
+        failure {
+            echo 'This runs only if the pipeline fails'
+            // Actions that run on failure go here, e.g., notifying failure
+        }
+        unstable {
+            echo 'This runs only if the pipeline is unstable'
+            // Actions that run if the build is unstable go here
+        }
+        cleanup {
+            echo 'This runs after all the other post conditions'
+            // Final cleanup actions go here
+        }
+    } 
 }
 

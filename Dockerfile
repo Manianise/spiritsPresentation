@@ -1,5 +1,9 @@
 FROM nginx:stable-alpine
 
+# set user to root
+USER root
+COPY /dist/* /usr/share/nginx/html
+
 # Set environment variables for user and group
 ENV USERNAME=nonroot
 ENV GROUPNAME=nonrootgroup
@@ -16,7 +20,5 @@ RUN addgroup -S "$GROUPNAME"
 RUN adduser -S -G "$GROUPNAME" "$USERNAME"
 
 USER $USERNAME
-
-COPY dist/ /usr/share/nginx/html
 
 EXPOSE 5137

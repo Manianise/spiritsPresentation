@@ -6,15 +6,8 @@ pipeline {
     environment {
         SONARQUBE_SERVER = 'Sonar server'
         DOCKER_HUB_PAT = credentials('docker_login')
-        
     }
-
     stages {
-        stage('clone') {
-            steps {
-                git branch: 'master', url: 'https://github.com/Manianise/spiritsPresentation.git'
-            }
-        }
         stage('install') {
             steps {
                 sh '''

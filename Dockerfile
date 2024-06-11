@@ -10,10 +10,10 @@ RUN apk update && apk add --no-cache \
     bash
 
 # Create the group
-RUN addgroup -S $GROUPNAME
+RUN addgroup -S "$GROUPNAME"
 
 # Create the user and add to the group
-RUN adduser -S -G $GROUPNAME $USERNAME
+RUN adduser -S -G "$GROUPNAME" "$USERNAME"
 
 USER $USERNAME
 

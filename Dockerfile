@@ -1,7 +1,7 @@
 FROM nginx:stable-alpine
 
 RUN addgroup -g nonroot && \
-adduser -S nonroot -G sudo
+adduser -S nonroot -G nonroot
 
 USER nonroot
 

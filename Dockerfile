@@ -15,6 +15,8 @@ RUN addgroup -S $GROUPNAME
 # Create the user and add to the group
 RUN adduser -S -G $GROUPNAME $USERNAME
 
+USER $USERNAME
+
 COPY dist/ /usr/share/nginx/html
 
 EXPOSE 5137

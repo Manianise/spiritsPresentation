@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'node_agent'
+        label 'agent_node'
     }
     
     environment {
@@ -37,7 +37,7 @@ pipeline {
                     -Dsonar.projectKey=spirits \
                     -Dsonar.sources=. \
                     -Dsonar.host.url=http://172.216.0.5:9000 \
-                    -Dsonar.token=sqp_f25a05bc6c69bd517e7b18278c7871caf99299b9
+                    -Dsonar.token=sqp_e939619ecab2312b1386b714fb91953c4059c045
                     '''
                 }
             }

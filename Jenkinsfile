@@ -53,7 +53,7 @@ pipeline {
             steps {
                 sh '''
                     docker login -u mechameleon -p ${DOCKER_HUB_PAT}
-                    docker build  . -t mechameleon/spirits:${BUILD_ID}
+                    docker build  . -t mechameleon/spirits:${BUILD_ID} -t mechameleon/spirits:latest
                     docker push mechameleon/spirits:${BUILD_ID}
                 '''
             }

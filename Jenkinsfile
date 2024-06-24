@@ -5,7 +5,7 @@ pipeline {
     
     environment {
         SONARQUBE_SERVER = 'Sonnar'
-        DOCKER_HUB_PAT = credentials('docker_login')
+        DOCKER_HUB_PAT = credentials('lauboudou')
         
     }
 

@@ -4,7 +4,7 @@ pipeline {
     }
     
     environment {
-        SONARQUBE_SERVER = 'Sonar server'
+        SONARQUBE_SERVER = 'Sonnar'
         DOCKER_HUB_PAT = credentials('docker_login')
         
     }
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                git 'https://github.com/Manianise/spiritsPresentation'
+                git 'https://github.com/Manianise/spiritsPresentation.git'
             }
         }
         stage('install') {

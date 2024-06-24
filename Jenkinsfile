@@ -34,10 +34,10 @@ pipeline {
                 withSonarQubeEnv(SONARQUBE_SERVER) {
                     sh '''
                     sonar-scanner \
-                    -Dsonar.projectKey=spirits \
+                    -Dsonar.projectKey=spirits2 \
                     -Dsonar.sources=. \
                     -Dsonar.host.url=http://172.216.0.5:9000 \
-                    -Dsonar.token=sqp_e939619ecab2312b1386b714fb91953c4059c045
+                    -Dsonar.token=sqp_db09f5f20154ed92c9ed57af0b9395250efd8bef
                     '''
                 }
             }
